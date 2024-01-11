@@ -18,6 +18,9 @@ tim.color("DarkBlue")
 #     tim.pendown()
 
 red = random.randint(0,255)
+green = random.randint(0,255)
+blue = random.randint(0,255)
+
 
 def polygon(number_of_sides):
     length_of_side = 100
