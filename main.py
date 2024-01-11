@@ -17,25 +17,24 @@ tim.color("DarkBlue")
 #     tim.forward(10)
 #     tim.pendown()
 
-red = random.randint(0,255)
-green = random.randint(0,255)
-blue = random.randint(0,255)
-
-
 def polygon(number_of_sides):
     length_of_side = 100
     angle = 360 / number_of_sides
+    red = random.randint(0, 255)
+    green = random.randint(0, 255)
+    blue = random.randint(0, 255)
+    tim.color(red,green,blue)
 
     for i in range(number_of_sides):
         tim.forward(length_of_side)
         tim.right(angle)
 
 
+screen = Screen()
+screen.colormode(255)
+
 for i in range(3,11):
     polygon(i)
-
-
-screen = Screen()
 
 screen.exitonclick()
 
