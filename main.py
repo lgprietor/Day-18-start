@@ -17,6 +17,8 @@ tim.color("DarkBlue")
 #     tim.forward(10)
 #     tim.pendown()
 
+red = random.randint(0,255)
+
 def polygon(number_of_sides):
     length_of_side = 100
     angle = 360 / number_of_sides
@@ -24,7 +26,7 @@ def polygon(number_of_sides):
     for i in range(number_of_sides):
         tim.forward(length_of_side)
         tim.right(angle)
-        # tim.pencolor(random.choice())
+
 
 for i in range(3,11):
     polygon(i)
