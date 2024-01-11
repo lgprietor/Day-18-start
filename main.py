@@ -61,11 +61,11 @@ def random_walk():
 
     if random_movement == "left":
         tim.left(90)
-        random_movement = random.randint(0, 1)
+        random_movement = movements[random.randint(0, 1)]
 
     elif random_movement == "right":
         tim.right(90)
-        random_movement = random.randint(0, 1)
+        random_movement = movements[random.randint(0, 1)]
 
     if random_movement == "forward":
         tim.forward(pace_length)
