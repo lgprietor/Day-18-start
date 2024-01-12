@@ -47,10 +47,15 @@ tim.forward(50)
 
 movements = ["forward", "backward", "left", "right"]
 
+movements2 = {
+    "1": "forward"
+}
+
+
 def random_walk():
 
     # Defining turtle color:
-
+    tim.speed(0)
     red = random.randint(0, 255)
     green = random.randint(0, 255)
     blue = random.randint(0, 255)
