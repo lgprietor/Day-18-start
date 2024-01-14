@@ -5,12 +5,13 @@ tim = Turtle()
 
 tim.shape("turtle")
 
-tim.color("DarkBlue")
+# tim.color("DarkBlue")
+
 
 # for i in range(0, 4):
 #     tim.forward(100)
 #     tim.right(90)
-
+#
 # for i in range(15):
 #     tim.forward(10)
 #     tim.penup()
@@ -41,49 +42,98 @@ tim.color("DarkBlue")
 
 # Challenge 4 - Random walk
 
-pace_length = 25
-tim.pensize(5)
-tim.forward(50)
+# pace_length = 25
+# tim.pensize(5)
+# tim.forward(50)
 
-movements = ["forward", "backward", "left", "right"]
+# movements = ["forward", "backward", "left", "right"]
 
-movements2 = {
-    "1": "forward"
-}
+# def random_walk():
+#
+#     # Defining turtle color:
+#     tim.speed(0)
+#     red = random.randint(0, 255)
+#     green = random.randint(0, 255)
+#     blue = random.randint(0, 255)
+#
+#     tim.color(red,green,blue)
+#
+#     random_movement = random.choice(movements)
+#
+#     if random_movement == "left":
+#         tim.left(90)
+#         random_movement = movements[random.randint(0, 1)]
+#
+#     elif random_movement == "right":
+#         tim.right(90)
+#         random_movement = movements[random.randint(0, 1)]
+#
+#     if random_movement == "forward":
+#         tim.forward(pace_length)
+#     elif random_movement == "backward":
+#         tim.backward(pace_length)
+#
+# screen = Screen()
+# screen.colormode(255)
+#
+# for i in range (0, 201):
+#     random_walk()
+#
+# screen.exitonclick()
 
 
-def random_walk():
+# Challenge 5 - Drawing a spirograph with circles:
 
-    # Defining turtle color:
-    tim.speed(0)
-    red = random.randint(0, 255)
-    green = random.randint(0, 255)
-    blue = random.randint(0, 255)
-
+def spirograph_circle(pace_length):
+    tim.pensize(1)
+    red = random.randint(0,255)
+    green = random.randint(0,255)
+    blue = random.randint(0,255)
     tim.color(red,green,blue)
 
-    random_movement = random.choice(movements)
+    tim.circle(pace_length)
 
-    if random_movement == "left":
-        tim.left(90)
-        random_movement = movements[random.randint(0, 1)]
+def polygon_spirograph(number_of_sides):
+    length = 200
+    angle = 360 / number_of_sides
+    # red = random.randint(0, 255)
+    # green = random.randint(0, 255)
+    # blue = random.randint(0, 255)
+    # tim.color(red, green, blue)
 
-    elif random_movement == "right":
-        tim.right(90)
-        random_movement = movements[random.randint(0, 1)]
+    for i in range(0, number_of_sides):
+        tim.forward(length)
+        tim.right(angle)
 
-    if random_movement == "forward":
-        tim.forward(pace_length)
-    elif random_movement == "backward":
-        tim.backward(pace_length)
+
+# polygon_spirograph(3)
 
 screen = Screen()
 screen.colormode(255)
 
-for i in range (0, 201):
-    random_walk()
+
+tim.speed("fastest")
+
+# # Spirograph with circles full
+
+# step_size = 15
+#
+# for i in range(0, 361, step_size):
+#
+#     tim.left(step_size)
+#     spirograph_circle(100)
+#     print(tim.heading())
+
+
+## Spirograph with step size:
+# Spirograph with polygons:
+
+step_size = 1
+
+
+for i in range (0, 361, step_size):
+    polygon_spirograph(6)
+    tim.left(step_size)
 
 screen.exitonclick()
-
-
 
